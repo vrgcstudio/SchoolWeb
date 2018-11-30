@@ -3,12 +3,15 @@ export class Item {
     public name: string;
     public price: number;
 }
+// login
 export class User{
     public id: number;
-    public username: string;
+    public email: string;
     public password: string;
     public name: string;
 }
+
+// register
 export class Student{
     public id_stu: number;
     public email_stu: string;
@@ -17,7 +20,7 @@ export class Student{
     public first_name_stu: string;
     public last_name_stu: string;
     public gender_stu: string;
-    public db_stu: string;
+    public bd_stu: string;
     public address: string;
     public lat: number;
     public lon: number;

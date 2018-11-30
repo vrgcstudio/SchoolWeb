@@ -13,7 +13,7 @@ export class UserService {
   constructor(public http: HttpClient) { }
 
   public login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(API_BASE + '/login.php', {username: username, password: password})
+    return this.http.post<any>(API_BASE + '/login.php', {email: username, password: password})
       .pipe(map(user => {
         this.token = user.token;
         return user;
