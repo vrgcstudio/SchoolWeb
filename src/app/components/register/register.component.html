@@ -31,11 +31,17 @@
             รหัสผ่านไม่ตรงกัน
           </div>
           <hr>
-          <div class="form-input">
-            <label><i class="fas fa-user"></i> ชื่อ - นามสกุล</label>
-            <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+          <div class="row">
+            <div class="col-6">
+                <div class="form-input">
+                    <label><i class="fas fa-user"></i> ชื่อจริง</label>
+                    <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                    <label><i class="fas fa-user"></i> นามสกุล</label>
+                    <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                  </div>
+            </div>
           </div>
-          <div class="form-input" style="magin-top: 5px">
+          <div class="form-input" style="margin-top: 5px">
             <label><i class="fas fa-venus-mars"></i> เพศ</label>
             ชาย
             <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
