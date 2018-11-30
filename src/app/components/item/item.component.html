@@ -1,0 +1,9 @@
+<a routerLink="/">← กลับ</a>
+
+<form *ngIf="item" (submit)="updateItem();">
+  <input type="text" name="name" [(ngModel)]="item.name">
+  <input type="number" name="price" [(ngModel)]="item.price">
+  <button type="submit">แก้ไข</button>
+</form>
+
+<button type="button" (click)="deleteItem();">ลบ</button>

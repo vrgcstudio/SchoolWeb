@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let item of items">
+    <a routerLink="item/{{item.id}}">{{item.name}}</a>
+  </li>
+</ul>
+
+<hr>
+
+<form (submit)="addItem();">
+  <input type="text" name="name" [(ngModel)]="newItem.name" placeholder="ชื่อสินค้า">
+  <input type="number" name="price" [(ngModel)]="newItem.price" placeholder="ราคาสินค้า">
+  <button type="submit">เพิ่มข้อมูล</button>
+</form>

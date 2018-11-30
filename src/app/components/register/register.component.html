@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body" *ngIf="!success">
+        <p>
+          <a routerLink="/auth"><i class="fas fa-angle-double-left"></i> กลับ</a>
+        </p>
+        <h5 class="card-title">สมัครสมาชิก</h5>
+        <form (submit)="addUser();">
+          <div class="alert alert-danger" *ngIf="errorMessage">
+            <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-user"></i> ชื่อผู้ใช้งาน</label>
+            <input type="text" name="username" [(ngModel)]="newUser.username" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
+            <input type="password" name="password" [(ngModel)]="newUser.password" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-lock"></i> ใส่รหัสผ่านอีกรอบ</label>
+            <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
+          </div>
+          <div class="alert alert-danger" *ngIf="newUser.password != check_password">
+            <i class="fas fa-exclamation-triangle"></i>
+            รหัสผ่านไม่ตรงกัน
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-user"></i> ชื่อ - นามสกุล</label>
+            <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+          </div>
+          <div class="text-center maitid-maishidkrai">
+            <button type="submit" class="btn btn-success" [disabled]="!validate()">
+              <i class="fas fa-user-plus" *ngIf="!loading"></i>
+              {{loading ? 'กรุณารอสักครู่…' : 'สมัครสมาชิก'}}
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="card-body" *ngIf="success">
+        <div class="alert alert-success">
+          <i class="fas fa-check-circle"></i> สมัครสมาชิกเรียบร้อยแย้ว (-3-)" ง่อววววว งิงิ เง้อออออร์ ง่าววววว
+        </div>
+        <p class="text-center">
+          <a routerLink="/auth">เข้าสู่ระบบ</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
