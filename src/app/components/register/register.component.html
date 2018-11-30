@@ -10,7 +10,7 @@
         <button (click)="setPagePar();">P</button>
         <button (click)="setPageDri();">D</button>
         <form (submit)="addUser();" *ngIf="curPageStu"> <!--formstu-->
-          <h2>Student</h2>
+          <h2>นักเรียน</h2>
           <div class="alert alert-danger" *ngIf="errorMessage">
             <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
           </div>
@@ -35,7 +35,7 @@
             <label><i class="fas fa-user"></i> ชื่อ - นามสกุล</label>
             <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
           </div>
-          <div class="form-input">
+          <div class="form-input" style="magin-top: 5px">
             <label><i class="fas fa-venus-mars"></i> เพศ</label>
             ชาย
             <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
@@ -47,16 +47,16 @@
             <input type="date" name="birthday" class="form-control">
           </div>
           <div class="form-input">
-            <label><i class="fas fa-birthday-cake"></i> ที่อยู่บ้าน</label>
+            <label><i class="fas fa-home"></i> ที่อยู่บ้าน</label>
             <input type="text" name="address" class="form-control">
           </div>
           <div class="form-input">
-            <label><i class="fas fa-birthday-cake"></i> โรคประจำตัว</label>
+            <label><i class="fas fa-stethoscope"></i> โรคประจำตัว</label>
             <input type="text" name="sick" class="form-control">
           </div>
           <div class="form-input">
-            <label><i class="fas fa-birthday-cake"></i> โทรศัพท์</label>
-            <input type="number" name="address" class="form-control">
+            <label><i class="fas fa-phone"></i> โทรศัพท์</label>
+            <input type="text" name="address" class="form-control">
           </div>
           <div class="text-center maitid-maishidkrai">
             <button type="submit" class="btn btn-success" [disabled]="!validate()">
