@@ -1,7 +1,10 @@
 .card {
-    margin-top: 20vh;
+    margin-top: 20px;
 }
 
 .maitid-maishidkrai {
-    margin-top: 10px
+    margin-top: 10px;
+}
+body {
+    background-image: linear-gradient(to left,#feb028,white,white,white,white,#00aeef);
 }
