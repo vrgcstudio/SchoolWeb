@@ -16,17 +16,17 @@
           </div>
           <div class="form-input">
             <label><i class="fas fa-user"></i> E-mail</label>
-            <input type="email" name="username" [(ngModel)]="newUser.username" class="form-control">
+            <input type="email" name="username" [(ngModel)]="newStu.email_stu" class="form-control">
           </div>
           <div class="form-input">                           
             <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
-            <input type="password" name="password" [(ngModel)]="newUser.password" class="form-control">
+            <input type="password" name="password" [(ngModel)]="newStu.password" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-lock"></i> ใส่รหัสผ่านอีกรอบ</label>
             <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
           </div>
-          <div class="alert alert-danger" *ngIf="newUser.password != check_password">
+          <div class="alert alert-danger" *ngIf="newStu.password != check_password">
             <i class="fas fa-exclamation-triangle"></i>
             รหัสผ่านไม่ตรงกัน
           </div>
