@@ -6,15 +6,19 @@
           <a routerLink="/auth"><i class="fas fa-angle-double-left"></i> กลับ</a>
         </p>
         <h5 class="card-title">สมัครสมาชิก</h5>
-        <form (submit)="addUser();">
+        <button (click)="setPageStu();">S</button>
+        <button (click)="setPagePar();">P</button>
+        <button (click)="setPageDri();">D</button>
+        <form (submit)="addUser();" *ngIf="curPageStu"> <!--formstu-->
+          <h2>Student</h2>
           <div class="alert alert-danger" *ngIf="errorMessage">
             <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
           </div>
           <div class="form-input">
-            <label><i class="fas fa-user"></i> ชื่อผู้ใช้งาน</label>
-            <input type="text" name="username" [(ngModel)]="newUser.username" class="form-control">
+            <label><i class="fas fa-user"></i> E-mail</label>
+            <input type="email" name="username" [(ngModel)]="newUser.username" class="form-control">
           </div>
-          <div class="form-input">
+          <div class="form-input">                           
             <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
             <input type="password" name="password" [(ngModel)]="newUser.password" class="form-control">
           </div>
@@ -26,9 +30,33 @@
             <i class="fas fa-exclamation-triangle"></i>
             รหัสผ่านไม่ตรงกัน
           </div>
+          <hr>
           <div class="form-input">
             <label><i class="fas fa-user"></i> ชื่อ - นามสกุล</label>
             <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-venus-mars"></i> เพศ</label>
+            ชาย
+            <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
+            หญิง
+            <input type="radio" name="gender" value="female" class="maitid-maishidkrai">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-birthday-cake"></i> วันเกิด</label>
+            <input type="date" name="birthday" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-birthday-cake"></i> ที่อยู่บ้าน</label>
+            <input type="text" name="address" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-birthday-cake"></i> โรคประจำตัว</label>
+            <input type="text" name="sick" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-birthday-cake"></i> โทรศัพท์</label>
+            <input type="number" name="address" class="form-control">
           </div>
           <div class="text-center maitid-maishidkrai">
             <button type="submit" class="btn btn-success" [disabled]="!validate()">
@@ -37,10 +65,16 @@
             </button>
           </div>
         </form>
+        <form *ngIf="curPagePar"> <!--formpar-->
+          Parent
+        </form>
+        <form *ngIf="curPageDri"> <!--formdri-->
+          Driver
+        </form>
       </div>
       <div class="card-body" *ngIf="success">
         <div class="alert alert-success">
-          <i class="fas fa-check-circle"></i> สมัครสมาชิกเรียบร้อยแย้ว (-3-)" ง่อววววว งิงิ เง้อออออร์ ง่าววววว
+          <i class="fas fa-check-circle"></i> สมัครสมาชิกเรียบร้อยแล้ว
         </div>
         <p class="text-center">
           <a routerLink="/auth">เข้าสู่ระบบ</a>

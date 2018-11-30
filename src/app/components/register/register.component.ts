@@ -14,12 +14,18 @@ export class RegisterComponent implements OnInit {
   public errorMessage: string;
   public loading: boolean;
   public success: boolean;
+  public curPageStu: boolean;
+  public curPagePar: boolean;
+  public curPageDri: boolean;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.clearNewUser();
     this.success = false;
+    this.curPageStu = true;
+    this.curPagePar = false;
+    this.curPageDri = false;
   }
 
   public clearNewUser(): void {
@@ -44,6 +50,22 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  public setPageStu(){
+    this.curPageStu = true;
+    this.curPagePar = false;
+    this.curPageDri = false;
+  }
+  public setPagePar(){
+    this.curPageStu = false;
+    this.curPagePar = true;
+    this.curPageDri = false;
+  }
+  public setPageDri(){
+    this.curPageStu = false;
+    this.curPagePar = false;
+    this.curPageDri = true;
+  }
+ 
   public validate(): boolean {
     if (!this.newUser.username || !this.newUser.password || !this.newUser.name || !this.check_password) {
       return false;
