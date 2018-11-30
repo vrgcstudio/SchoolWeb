@@ -11,6 +11,8 @@ import { ItemComponent } from './components/item/item.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RouteGuard } from './classes/route-guard';
+import { MenuStudentComponent } from './components/menu-student/menu-student.component';
+import { SearchcarStudentComponent } from './components/searchcar-student/searchcar-student.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RouteGuard } from './classes/route-guard';
     ItemListComponent,
     ItemComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MenuStudentComponent,
+    SearchcarStudentComponent
   ],
   imports: [
     BrowserModule,
