@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
     this.newStu.first_name_stu = '';
     this.newStu.last_name_stu = '';
     this.newStu.gender_stu = '';
-    this.newStu.db_stu = '';
+    this.newStu.bd_stu = '';
     this.newStu.address = '';
     this.newStu.lat = 0;
     this.newStu.lon = 0;
@@ -90,7 +90,7 @@ export class RegisterComponent implements OnInit {
   public validate(): boolean {
       if(this.check_status == 'student'){
         if (!this.newStu.email_stu || !this.newStu.password || !this.check_password || !this.newStu.first_name_stu
-          || !this.newStu.last_name_stu || !this.newStu.gender_stu || !this.newStu.db_stu  || !this.newStu.address 
+          || !this.newStu.last_name_stu || !this.newStu.gender_stu || !this.newStu.bd_stu  || !this.newStu.address 
           || !this.newStu.lat || !this.newStu.lon || !this.newStu.sick_stu || !this.newStu.school || !this.newStu.tel_stu) {
           return false;
         }
