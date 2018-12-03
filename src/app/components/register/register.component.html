@@ -16,17 +16,17 @@
           </div>
           <div class="form-input">
             <label><i class="fas fa-user"></i> E-mail</label>
-            <input type="email" name="username" [(ngModel)]="newStu.email_stu" class="form-control">
+            <input type="text" name="username" [(ngModel)]="newUser.email" class="form-control">
           </div>
           <div class="form-input">                           
             <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
-            <input type="password" name="password" [(ngModel)]="newStu.password" class="form-control">
+            <input type="password" name="password" [(ngModel)]="newUser.password" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-lock"></i> ใส่รหัสผ่านอีกรอบ</label>
             <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
           </div>
-          <div class="alert alert-danger" *ngIf="newStu.password != check_password">
+          <div class="alert alert-danger" *ngIf="newUser.password != check_password">
             <i class="fas fa-exclamation-triangle"></i>
             รหัสผ่านไม่ตรงกัน
           </div>
@@ -34,35 +34,41 @@
           <div class="row">
             <div class="col-6">
                 <div class="form-input">
-                    <label><i class="fas fa-user"></i> ชื่อจริง</label>
-                    <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
-                    <label><i class="fas fa-user"></i> นามสกุล</label>
-                    <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
-                  </div>
+                    <label><i class="fas fa-user"></i>ชื่อจริง</label>
+                    <input type="text" name="name" [(ngModel)]="newStu.first_name_stu" class="form-control">
+                </div>
+                <div class="form-input">
+                  <label><i class="fas fa-user"></i>นามสกุล</label>
+                  <input type="text" name="name" [(ngModel)]="newStu.last_name_stu" class="form-control">
+              </div>
             </div>
           </div>
           <div class="form-input" style="margin-top: 5px">
             <label><i class="fas fa-venus-mars"></i> เพศ</label>
             ชาย
-            <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
+            <input type="radio" name="gender" value="male" [(ngModel)]="newStu.gender_stu" class="maitid-maishidkrai">
             หญิง
-            <input type="radio" name="gender" value="female" class="maitid-maishidkrai">
+            <input type="radio" name="gender" value="female" [(ngModel)]="newStu.gender_stu" class="maitid-maishidkrai">
           </div>
           <div class="form-input">
             <label><i class="fas fa-birthday-cake"></i> วันเกิด</label>
-            <input type="date" name="birthday" class="form-control">
+            <input type="date" name="birthday" [(ngModel)]="newStu.bd_stu" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-home"></i> ที่อยู่บ้าน</label>
-            <input type="text" name="address" class="form-control">
+            <input type="text" name="address" [(ngModel)]="newStu.address" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-stethoscope"></i> โรคประจำตัว</label>
-            <input type="text" name="sick" class="form-control">
+            <input type="text" name="sick" [(ngModel)]="newStu.sick_stu" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-school"></i>โรงเรียน</label>
+            <input type="text" name="school" [(ngModel)]="newStu.school" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-phone"></i> โทรศัพท์</label>
-            <input type="text" name="address" class="form-control">
+            <input type="text" name="telnum" [(ngModel)]="newStu.tel_stu" class="form-control">
           </div>
           <div class="text-center maitid-maishidkrai">
             <button type="submit" class="btn btn-success" [disabled]="!validate()">

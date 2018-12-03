@@ -8,14 +8,12 @@ export class User{
     public id: number;
     public email: string;
     public password: string;
-    public name: string;
+    public status: string;
 }
 
 // register
 export class Student{
     public id_stu: number;
-    public email_stu: string;
-    public password: string;
     public status: string;
     public first_name_stu: string;
     public last_name_stu: string;

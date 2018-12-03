@@ -12,8 +12,12 @@ export class ApiService {
 
   constructor(private http: HttpClient, private userService: UserService) { }
 
-  public addUser(user: Student): Observable<null> {
+  public addUser(user: User): Observable<null> {
     return this.http.post<null>(API_BASE + 'register.php', user);
+  }
+
+  public addStu(stuUser: Student): Observable<null> {
+    return this.http.post<null>(API_BASE + 'register.php', stuUser);
   }
 
   public listItems(): Observable<Item[]> {
