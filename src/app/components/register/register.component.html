@@ -1,91 +1,230 @@
-<div class="row">
-  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
-    <div class="card">
-      <div class="card-body" *ngIf="!success">
-        <p>
-          <a routerLink="/auth"><i class="fas fa-angle-double-left"></i> กลับ</a>
-        </p>
-        <h5 class="card-title">สมัครสมาชิก</h5>
-        <button (click)="setPageStu();">S</button>
-        <button (click)="setPagePar();">P</button>
-        <button (click)="setPageDri();">D</button>
-        <form (submit)="addUser();" *ngIf="curPageStu"> <!--formstu-->
-          <h2>นักเรียน</h2>
-          <div class="alert alert-danger" *ngIf="errorMessage">
-            <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
-          </div>
-          <div class="form-input">
-            <label><i class="fas fa-user"></i> E-mail</label>
-            <input type="email" name="username" [(ngModel)]="newStu.email_stu" class="form-control">
-          </div>
-          <div class="form-input">                           
-            <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
-            <input type="password" name="password" [(ngModel)]="newStu.password" class="form-control">
-          </div>
-          <div class="form-input">
-            <label><i class="fas fa-lock"></i> ใส่รหัสผ่านอีกรอบ</label>
-            <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
-          </div>
-          <div class="alert alert-danger" *ngIf="newStu.password != check_password">
-            <i class="fas fa-exclamation-triangle"></i>
-            รหัสผ่านไม่ตรงกัน
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-6">
-                <div class="form-input">
-                    <label><i class="fas fa-user"></i> ชื่อจริง</label>
-                    <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
-                    <label><i class="fas fa-user"></i> นามสกุล</label>
-                    <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
-                  </div>
+<body>
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body" *ngIf="!success">
+            <img src="/assets/etc/logo.png" class="img-fluid" alt="Responsive image">
+          <p>
+            <a routerLink="/auth"><i class="fas fa-angle-double-left"></i> กลับ</a>
+          </p>
+          <h5 class="card-title">สมัครสมาชิก</h5>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                  <button (click)="setPageStu();"> นักเรียน </button>
+                  <button (click)="setPagePar();"> ผู้ปกครอง </button>
+                  <button (click)="setPageDri();"> คนขับ </button>
+              </div>
             </div>
           </div>
-          <div class="form-input" style="margin-top: 5px">
-            <label><i class="fas fa-venus-mars"></i> เพศ</label>
-            ชาย
-            <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
-            หญิง
-            <input type="radio" name="gender" value="female" class="maitid-maishidkrai">
-          </div>
-          <div class="form-input">
-            <label><i class="fas fa-birthday-cake"></i> วันเกิด</label>
-            <input type="date" name="birthday" class="form-control">
-          </div>
-          <div class="form-input">
-            <label><i class="fas fa-home"></i> ที่อยู่บ้าน</label>
-            <input type="text" name="address" class="form-control">
-          </div>
-          <div class="form-input">
-            <label><i class="fas fa-stethoscope"></i> โรคประจำตัว</label>
-            <input type="text" name="sick" class="form-control">
-          </div>
-          <div class="form-input">
-            <label><i class="fas fa-phone"></i> โทรศัพท์</label>
-            <input type="text" name="address" class="form-control">
-          </div>
-          <div class="text-center maitid-maishidkrai">
-              <button type="submit" class="btn btn-success" [disabled]="!validate()">
-                <i class="fas fa-user-plus" *ngIf="!loading"></i>
-                {{loading ? 'กรุณารอสักครู่…' : 'สมัครสมาชิก'}}
-              </button>
+          <form (submit)="addUser();" *ngIf="curPageStu"> <!--formstu-->
+            <h2>นักเรียน</h2>
+            <div class="alert alert-danger" *ngIf="errorMessage">
+              <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
             </div>
-        </form>
-        <form *ngIf="curPagePar"> <!--formpar-->
-          Parent
-        </form>
-        <form *ngIf="curPageDri"> <!--formdri-->
-          Driver
-        </form>
-      </div>
-      <div class="card-body" *ngIf="success">
-        <div class="alert alert-success">
-          <i class="fas fa-check-circle"></i> สมัครสมาชิกเรียบร้อยแล้ว
+            <div class="form-input">
+              <label><i class="fas fa-user"></i> อีเมล</label>
+              <input type="email" name="username" [(ngModel)]="newStu.email_stu" class="form-control" title="อีเมลนี้เป็นบัญชีของคุณเพื่อใช้สำหรับล็อคอินเข้าสู่ระบบสมาชิกและใช้งาน" placeholder="กรอกอีเมล">
+            </div>
+            <div class="form-input">                           
+              <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
+              <input type="password" name="password" [(ngModel)]="newStu.password" class="form-control" title="รหัสผ่าน สามารถใช้ a-z, A-Z, 0-9, และอักขระบางตัว" placeholder="รหัสผ่านของคุณ">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-lock"></i> ยืนยันรหัสผ่าน</label>
+              <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
+            </div>
+            <div class="alert alert-danger" *ngIf="newStu.password != check_password">
+              <i class="fas fa-exclamation-triangle"></i>
+              รหัสผ่านไม่ตรงกัน
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-6">
+                  <div class="form-input">
+                      <label><i class="fas fa-user"></i> ชื่อจริง</label>
+                      <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                      <label><i class="fas fa-user"></i> นามสกุล</label>
+                      <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                    </div>
+              </div>
+            </div>
+            <div class="form-input" style="margin-top: 5px">
+              <label><i class="fas fa-venus-mars"></i> เพศ</label>
+              ชาย
+              <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
+              หญิง
+              <input type="radio" name="gender" value="female" class="maitid-maishidkrai">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-birthday-cake"></i> วันเกิด</label>
+              <input type="date" name="birthday" class="form-control">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-home"></i> ที่อยู่บ้าน</label>
+              <input type="text" name="address" class="form-control">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-stethoscope"></i> โรคประจำตัว</label>
+              <input type="text" name="sick" class="form-control">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-phone"></i> เบอร์โทรศัพท์</label>
+              <input type="tel" name="address" class="form-control">
+            </div>
+            <div class="text-center maitid-maishidkrai">
+                <button type="submit" class="btn btn-success" [disabled]="!validate()">
+                  <i class="fas fa-user-plus" *ngIf="!loading"></i>
+                  {{loading ? 'กรุณารอสักครู่…' : 'สมัครสมาชิก'}}
+                </button>
+              </div>
+          </form>
+          <form *ngIf="curPagePar"> <!--formpar-->
+            <h2> ผู้ปกครอง</h2>
+            <div class="alert alert-danger" *ngIf="errorMessage">
+              <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-user"></i> อีเมล</label>
+              <input type="email" name="username" [(ngModel)]="newStu.email_stu" class="form-control" class="form-control" title="อีเมลนี้เป็นบัญชีของคุณเพื่อใช้สำหรับล็อคอินเข้าสู่ระบบสมาชิกและใช้งาน" placeholder="กรอกอีเมล">
+            </div>
+            <div class="form-input">                           
+              <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
+              <input type="password" name="password" [(ngModel)]="newStu.password" class="form-control" title="รหัสผ่านของคุณ" class="form-control" title="รหัสผ่าน สามารถใช้ a-z, A-Z, 0-9, และอักขระบางตัว" placeholder="รหัสผ่านของคุณ">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-lock"></i> ยืนยันรหัสผ่าน</label>
+              <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
+            </div>
+            <div class="alert alert-danger" *ngIf="newStu.password != check_password">
+              <i class="fas fa-exclamation-triangle"></i>
+              รหัสผ่านไม่ตรงกัน
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-6">
+                  <div class="form-input">
+                      <label><i class="fas fa-user"></i> ชื่อจริง</label>
+                      <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                      <label><i class="fas fa-user"></i> นามสกุล</label>
+                      <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                    </div>
+              </div>
+            </div>
+            <div class="form-input" style="margin-top: 5px">
+              <label><i class="fas fa-venus-mars"></i> เพศ</label>
+              ชาย
+              <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
+              หญิง
+              <input type="radio" name="gender" value="female" class="maitid-maishidkrai">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-birthday-cake"></i> วันเกิด</label>
+              <input type="date" name="birthday" class="form-control">
+            </div>
+            <div class="form-input">
+                <label><i class="far fa-address-card"></i> รหัสประจำตัวประชาชน</label>
+                <input type="tel" name="birthday" class="form-control">
+              </div>
+            <div class="form-input">
+              <label><i class="fas fa-home"></i> ที่อยู่บ้าน</label>
+              <input type="text" name="address" class="form-control">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-stethoscope"></i> โรคประจำตัว</label>
+              <input type="text" name="sick" class="form-control">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-phone"></i> เบอร์โทรศัพท์</label>
+              <input type="text" name="address" class="form-control">
+            </div>
+            <div class="text-center maitid-maishidkrai">
+                <button type="submit" class="btn btn-success" [disabled]="!validate()">
+                  <i class="fas fa-user-plus" *ngIf="!loading"></i>
+                  {{loading ? 'กรุณารอสักครู่…' : 'สมัครสมาชิก'}}
+                </button>
+              </div>
+          </form>
+          <form *ngIf="curPageDri"> <!--formdri-->
+            <h2>คนขับ</h2>
+            <div class="alert alert-danger" *ngIf="errorMessage">
+              <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-user"></i> อีเมล</label>
+              <input type="email" name="username" [(ngModel)]="newStu.email_stu" class="form-control" class="form-control" title="อีเมลนี้เป็นบัญชีของคุณเพื่อใช้สำหรับล็อคอินเข้าสู่ระบบสมาชิกและใช้งาน" placeholder="กรอกอีเมล">
+            </div>
+            <div class="form-input">                           
+              <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
+              <input type="password" name="password" [(ngModel)]="newStu.password" class="form-control" title="รหัสผ่าน สามารถใช้ a-z, A-Z, 0-9, และอักขระบางตัว" placeholder="รหัสผ่านของคุณ" >
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-lock"></i> ยืนยันรหัสผ่าน</label>
+              <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
+            </div>
+            <div class="alert alert-danger" *ngIf="newStu.password != check_password">
+              <i class="fas fa-exclamation-triangle"></i>
+              รหัสผ่านไม่ตรงกัน
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-6">
+                  <div class="form-input">
+                      <label><i class="fas fa-user"></i> ชื่อจริง</label>
+                      <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                      <label><i class="fas fa-user"></i> นามสกุล</label>
+                      <input type="text" name="name" [(ngModel)]="newUser.name" class="form-control">
+                    </div>
+              </div>
+            </div>
+            <div class="form-input" style="margin-top: 5px">
+              <label><i class="fas fa-venus-mars"></i> เพศ</label>
+              ชาย
+              <input type="radio" name="gender" value="male" class="maitid-maishidkrai">
+              หญิง
+              <input type="radio" name="gender" value="female" class="maitid-maishidkrai">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-birthday-cake"></i> วันเกิด</label>
+              <input type="date" name="birthday" class="form-control">
+            </div>
+            <div class="form-input">
+                <label><i class="fas fa-car-alt"></i> ป้ายทะเบียนรถ</label>
+                <input type="text" name="birthday" class="form-control">
+              </div>
+            <div class="form-input">
+                <label><i class="far fa-address-card"></i> รหัสประจำตัวประชาชน</label>
+                <input type="tel" name="birthday" class="form-control">
+              </div>
+            <div class="form-input">
+              <label><i class="fas fa-home"></i> ที่อยู่บ้าน</label>
+              <input type="text" name="address" class="form-control">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-stethoscope"></i> โรคประจำตัว</label>
+              <input type="text" name="sick" class="form-control">
+            </div>
+            <div class="form-input">
+              <label><i class="fas fa-phone"></i> เบอร์โทรศัพท์</label>
+              <input type="text" name="address" class="form-control">
+            </div>
+            <div class="text-center maitid-maishidkrai">
+                <button type="submit" class="btn btn-success" [disabled]="!validate()">
+                  <i class="fas fa-user-plus" *ngIf="!loading"></i>
+                  {{loading ? 'กรุณารอสักครู่…' : 'สมัครสมาชิก'}}
+                </button>
+              </div>
+          </form>
         </div>
-        <p class="text-center">
-          <a routerLink="/auth">เข้าสู่ระบบ</a>
-        </p>
+        <div class="card-body" *ngIf="success">
+          <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i> สมัครสมาชิกเรียบร้อยแล้ว
+          </div>
+          <p class="text-center">
+            <a routerLink="/auth">เข้าสู่ระบบ</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>
