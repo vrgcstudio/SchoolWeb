@@ -78,7 +78,64 @@
           </div>
         </form>
         <form *ngIf="curPagePar"> <!--formpar-->
-          Parent
+          <h2>ผู้ปกครอง</h2>
+          <div class="alert alert-danger" *ngIf="errorMessage">
+            <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-user"></i> E-mail</label>
+            <input type="text" name="username" [(ngModel)]="newUser.email" class="form-control">
+          </div>
+          <div class="form-input">                           
+            <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
+            <input type="password" name="password" [(ngModel)]="newUser.password" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-lock"></i> ใส่รหัสผ่านอีกรอบ</label>
+            <input type="password" name="confirmpassword" [(ngModel)]="check_password" class="form-control">
+          </div>
+          <div class="alert alert-danger" *ngIf="newUser.password != check_password">
+            <i class="fas fa-exclamation-triangle"></i>
+            รหัสผ่านไม่ตรงกัน
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-6">
+                <div class="form-input">
+                    <label><i class="fas fa-user"></i>ชื่อจริง</label>
+                    <input type="text" name="name" [(ngModel)]="newStu.first_name_stu" class="form-control">
+                </div>
+                <div class="form-input">
+                  <label><i class="fas fa-user"></i>นามสกุล</label>
+                  <input type="text" name="name" [(ngModel)]="newStu.last_name_stu" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="form-input" style="margin-top: 5px">
+            <label><i class="fas fa-venus-mars"></i> เพศ</label>
+            ชาย
+            <input type="radio" name="gender" value="male" [(ngModel)]="newStu.gender_stu" class="maitid-maishidkrai">
+            หญิง
+            <input type="radio" name="gender" value="female" [(ngModel)]="newStu.gender_stu" class="maitid-maishidkrai">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-birthday-cake"></i> ความสัมพันธ์</label>
+            <input type="text" name="birthday" [(ngModel)]="newStu.bd_stu" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-phone"></i> โทรศัพท์มือถือ</label>
+            <input type="text" name="telnum" [(ngModel)]="newStu.tel_stu" class="form-control">
+          </div>
+          <div class="form-input">
+            <label><i class="fas fa-phone"></i> โทรศัพท์ที่ทำงาน</label>
+            <input type="text" name="telnum" [(ngModel)]="newStu.tel_stu" class="form-control">
+          </div>
+          <div class="text-center maitid-maishidkrai">
+            <button type="submit" class="btn btn-success" [disabled]="!validate()">
+              <i class="fas fa-user-plus" *ngIf="!loading"></i>
+              {{loading ? 'กรุณารอสักครู่…' : 'สมัครสมาชิก'}}
+            </button>
+          </div>
         </form>
         <form *ngIf="curPageDri"> <!--formdri-->
           Driver

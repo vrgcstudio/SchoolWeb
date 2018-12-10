@@ -39,6 +39,8 @@ export class RegisterComponent implements OnInit {
     this.check_password = '';
     this.newUser = new User();
     this.newUser.id= 0;
+    this.newUser.email = '';
+    this.newUser.password ='';
     this.newUser.status = '';
   }
   
@@ -83,20 +85,18 @@ export class RegisterComponent implements OnInit {
       this.apiService.addUser(this.newUser).subscribe(() => {
         this.loading = false;
         this.success = true;
+        if (this.newUser.status == 'student'){
+          this.apiService.addStu(this.newStu).subscribe(() => {
+            alert ('you are student');
+          }, (error: HttpErrorResponse) => {
+            alert ('you are not student');
+          });
+        }
       }, (error: HttpErrorResponse) => {
         this.loading = false;
-        // this.errorMessage = error.statusText;
-      });
-    }
-    if (this.newUser.status == 'student'){
-      this.apiService.addStu(this.newStu).subscribe(() => {
-        alert ('you are student');
-      }, (error: HttpErrorResponse) => {
         this.errorMessage = error.statusText;
       });
     }
-
-    
   }
   public validate(): boolean {
         if (!this.newUser.email || !this.newUser.password || !this.check_password ) {
