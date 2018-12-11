@@ -1,4 +1,3 @@
-<body>
 <div class="row">
   <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
     <div class="card">
@@ -7,9 +6,9 @@
           <a routerLink="/auth"><i class="fas fa-angle-double-left"></i> กลับ</a>
         </p>
         <h5 class="card-title">สมัครสมาชิก</h5>
-        <button (click)="setPageStu();">S</button>
-        <button (click)="setPagePar();">P</button>
-        <button (click)="setPageDri();">D</button>
+        <button (click)="setPageStu();"> นักเรียน </button>
+        <button (click)="setPagePar();"> ผู้ปกครอง </button>
+        <button (click)="setPageDri();"> คนขับ </button>
         <form (submit)="addUser();" *ngIf="curPageStu"> <!--formstu-->
           <h2>นักเรียน</h2>
           <div class="alert alert-danger" *ngIf="errorMessage">
@@ -224,7 +223,10 @@
         <div class="alert alert-success">
           <i class="fas fa-check-circle"></i> สมัครสมาชิกเรียบร้อยแล้ว
         </div>
+        <p class="text-center">
+          <a routerLink="/auth">เข้าสู่ระบบ</a>
+        </p>
       </div>
     </div>
   </div>
-</body>
+</div>
