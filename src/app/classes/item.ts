@@ -1,3 +1,4 @@
+
 export class Item {
     public id: number;
     public name: string;
@@ -14,7 +15,8 @@ export class User{
 // register
 export class Student{
     public id_stu: number;
-    public status: string;
+    public main_id: number;
+    public email_stu: string;
     public first_name_stu: string;
     public last_name_stu: string;
     public gender_stu: string;

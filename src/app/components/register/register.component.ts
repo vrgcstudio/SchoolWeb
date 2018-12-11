@@ -67,6 +67,8 @@ export class RegisterComponent implements OnInit {
   public clearNewStu(): void {
     this.newStu = new Student();
     this.newStu.id_stu= 0;
+    this.newStu.main_id= 0;
+    this.newStu.email_stu='';
     this.newStu.first_name_stu = '';
     this.newStu.last_name_stu = '';
     this.newStu.gender_stu = '';
@@ -85,16 +87,14 @@ export class RegisterComponent implements OnInit {
       this.apiService.addUser(this.newUser).subscribe(() => {
         this.loading = false;
         this.success = true;
-        if (this.newUser.status == 'student'){
-          this.apiService.addStu(this.newStu).subscribe(() => {
-            alert ('you are student');
-          }, (error: HttpErrorResponse) => {
-            alert ('you are not student');
-          });
-        }
       }, (error: HttpErrorResponse) => {
         this.loading = false;
         this.errorMessage = error.statusText;
+      });
+      this.apiService.addStu(this.newStu).subscribe(() => {
+        alert ('you are student');
+      }, (error: HttpErrorResponse) => {
+        alert ('you are not student');
       });
     }
   }
