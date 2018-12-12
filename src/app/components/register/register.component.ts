@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item, User, Student, Parent, Driver } from 'src/app/classes/item';
+import { User } from 'src/app/classes/item';
 import { ApiService } from '../../services/api.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -11,9 +11,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
   
   public newUser: User;
-  public newStu: Student;
-  // public newPar: Parent;
-  // public newDri: Driver;
 
   public check_password: string;
   public errorMessage: string;
@@ -27,7 +24,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.clear();
-    this.clearNewStu();
     this.success = false;
     this.curPageStu = true;
     this.curPagePar = false;
@@ -42,6 +38,17 @@ export class RegisterComponent implements OnInit {
     this.newUser.email = '';
     this.newUser.password ='';
     this.newUser.status = '';
+    this.newUser.id_stu= 0;
+    this.newUser.first_name_stu = '';
+    this.newUser.last_name_stu = '';
+    this.newUser.gender_stu = '';
+    this.newUser.bd_stu = '';
+    this.newUser.address = '';
+    this.newUser.lat = 0;
+    this.newUser.lon = 0;
+    this.newUser.sick_stu = '';
+    this.newUser.school = '';
+    this.newUser.tel_stu = 0;
   }
   
   
@@ -63,41 +70,22 @@ export class RegisterComponent implements OnInit {
     this.curPageDri = true;
     this.newUser.status = 'driver';
   }
-  // student 
-  public clearNewStu(): void {
-    this.newStu = new Student();
-    this.newStu.id_stu= 0;
-    this.newStu.main_id= 0;
-    this.newStu.email_stu='';
-    this.newStu.first_name_stu = '';
-    this.newStu.last_name_stu = '';
-    this.newStu.gender_stu = '';
-    this.newStu.bd_stu = '';
-    this.newStu.address = '';
-    this.newStu.lat = 0;
-    this.newStu.lon = 0;
-    this.newStu.sick_stu = '';
-    this.newStu.school = '';
-    this.newStu.tel_stu = 0;
-  }
+
   public addUser(): void {
     if (this.validate()) {
       this.errorMessage = '';
       this.loading = true;
       this.apiService.addUser(this.newUser).subscribe(() => {
-        this.loading = false;
-        this.success = true;
-      }, (error: HttpErrorResponse) => {
-        this.loading = false;
-        this.errorMessage = error.statusText;
-      });
-      this.apiService.addStu(this.newStu).subscribe(() => {
-        alert ('you are student');
-      }, (error: HttpErrorResponse) => {
-        alert ('you are not student');
+        this.loading = false;                        /*something worng here*/
+        this.success = true;                         /*something worng here*/
+      }, (error: HttpErrorResponse) => {             /*something worng here*/
+        this.loading = false;                        /*something worng here*/
+        this.errorMessage = error.statusText;        /*something worng here*/
+        this.success = true;                         /*something worng here*/
       });
     }
   }
+  
   public validate(): boolean {
         if (!this.newUser.email || !this.newUser.password || !this.check_password ) {
           return false;
@@ -110,5 +98,4 @@ export class RegisterComponent implements OnInit {
         }      
         return true;
       }
-  //  parent
 }

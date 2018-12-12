@@ -4,19 +4,14 @@ export class Item {
     public name: string;
     public price: number;
 }
-// login
+
+// register
 export class User{
     public id: number;
     public email: string;
     public password: string;
     public status: string;
-}
-
-// register
-export class Student{
     public id_stu: number;
-    public main_id: number;
-    public email_stu: string;
     public first_name_stu: string;
     public last_name_stu: string;
     public gender_stu: string;
@@ -28,6 +23,7 @@ export class Student{
     public school: string;
     public tel_stu: number;
 }
+
 export class Parent{
     public id_par: number;
     public email_par: string;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Item, User, Student } from '../classes/item';
+import { Item, User} from '../classes/item';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
@@ -14,10 +14,6 @@ export class ApiService {
 
   public addUser(user: User): Observable<null> {
     return this.http.post<null>(API_BASE + 'register.php', user);
-  }
-
-  public addStu(stuUser: Student): Observable<null> {
-    return this.http.post<null>(API_BASE + 'register.php', stuUser);
   }
 
   public listItems(): Observable<Item[]> {

@@ -16,7 +16,7 @@
           </div>
           <div class="form-input">
             <label><i class="fas fa-user"></i> E-mail</label>
-            <input type="text" name="username" [(ngModel)]="newUser.email" class="form-control">
+            <input type="email" name="username" [(ngModel)]="newUser.email" class="form-control">
           </div>
           <div class="form-input">                           
             <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
@@ -35,51 +35,48 @@
             <div class="col-6">
               <div class="form-input">
                   <label><i class="fas fa-user"></i>ชื่อจริง</label>
-                  <input type="text" name="name" [(ngModel)]="newStu.first_name_stu" class="form-control">
+                  <input type="text" name="name" [(ngModel)]="newUser.first_name_stu" class="form-control">
               </div>
               <div class="form-input">
                 <label><i class="fas fa-user"></i>นามสกุล</label>
-                <input type="text" name="name" [(ngModel)]="newStu.last_name_stu" class="form-control">
+                <input type="text" name="name" [(ngModel)]="newUser.last_name_stu" class="form-control">
               </div>
             </div>
           </div>
           <div class="form-input" style="margin-top: 5px">
             <label><i class="fas fa-venus-mars"></i> เพศ</label>
-            <div class="form-input">
-              <input type="text" name="gender" [(ngModel)]="newStu.gender_stu" class="form-control">
-            </div>
-            <!-- ชาย
-            <input type="radio" name="gender" value="male" [(ngModel)]="newStu.gender_stu" class="maitid-maishidkrai">
+            ชาย
+            <input type="radio" name="gender" value="male" [(ngModel)]="newUser.gender_stu" class="maitid-maishidkrai">
             หญิง
-            <input type="radio" name="gender" value="female" [(ngModel)]="newStu.gender_stu" class="maitid-maishidkrai"> -->
+            <input type="radio" name="gender" value="female" [(ngModel)]="newUser.gender_stu" class="maitid-maishidkrai">
           </div>
           <div class="form-input">
             <label><i class="fas fa-birthday-cake"></i> วันเกิด</label>
-            <input type="text" name="birthday" [(ngModel)]="newStu.bd_stu" class="form-control">
+            <input type="date" name="birthday" [(ngModel)]="newUser.bd_stu" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-home"></i> ที่อยู่บ้าน</label>
-            <input type="text" name="address" [(ngModel)]="newStu.address" class="form-control">
+            <input type="text" name="address" [(ngModel)]="newUser.address" class="form-control">
           </div>
           <div class="form-input">
             <label><i></i> Lat</label>
-            <input type="text" name="lat" [(ngModel)]="newStu.lat" class="form-control">
+            <input type="text" name="lat" [(ngModel)]="newUser.lat" class="form-control">
           </div>
           <div class="form-input">
             <label><i></i>lon</label>
-            <input type="text" name="lon" [(ngModel)]="newStu.lon" class="form-control">
+            <input type="text" name="lon" [(ngModel)]="newUser.lon" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-stethoscope"></i> โรคประจำตัว</label>
-            <input type="text" name="sick" [(ngModel)]="newStu.sick_stu" class="form-control">
+            <input type="text" name="sick" [(ngModel)]="newUser.sick_stu" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-school"></i>โรงเรียน</label>
-            <input type="text" name="school" [(ngModel)]="newStu.school" class="form-control">
+            <input type="text" name="school" [(ngModel)]="newUser.school" class="form-control">
           </div>
           <div class="form-input">
             <label><i class="fas fa-phone"></i> โทรศัพท์</label>
-            <input type="text" name="telnum" [(ngModel)]="newStu.tel_stu" class="form-control">
+            <input type="text" name="telnum" [(ngModel)]="newUser.tel_stu" class="form-control">
           </div>
           <div class="text-center maitid-maishidkrai">
             <button type="submit" class="btn btn-success" [disabled]="!validate()">
@@ -88,7 +85,7 @@
             </button>
           </div>
         </form>
-        <form *ngIf="curPagePar"> <!--formpar-->
+        <!-- <form *ngIf="curPagePar">
           <h2>ผู้ปกครอง</h2>
           <div class="alert alert-danger" *ngIf="errorMessage">
             <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
@@ -148,7 +145,7 @@
               </button>
             </div>
         </form>
-        <form *ngIf="curPageDri"> <!--formdri-->
+        <form *ngIf="curPageDri">
           <h2>คนขับ</h2>
             <div class="alert alert-danger" *ngIf="errorMessage">
               <i class="fas fa-times-circle"></i> <strong>เกิดข้อผิดพลาด</strong> - {{errorMessage}}
@@ -217,7 +214,7 @@
                   {{loading ? 'กรุณารอสักครู่…' : 'สมัครสมาชิก'}}
                 </button>
             </div>
-        </form>
+        </form> -->
       </div>
       <div class="card-body" *ngIf="success">
         <div class="alert alert-success">
