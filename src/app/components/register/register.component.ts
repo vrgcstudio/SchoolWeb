@@ -38,6 +38,7 @@ export class RegisterComponent implements OnInit {
     this.newUser.email = '';
     this.newUser.password ='';
     this.newUser.status = '';
+    
     this.newUser.id_stu= 0;
     this.newUser.first_name_stu = '';
     this.newUser.last_name_stu = '';
@@ -49,6 +50,22 @@ export class RegisterComponent implements OnInit {
     this.newUser.sick_stu = '';
     this.newUser.school = '';
     this.newUser.tel_stu = 0;
+  
+    this.newUser.id_par= 0;
+    this.newUser.first_name_par = '';
+    this.newUser.last_name_par = '';
+    this.newUser.gender_par = '';
+    this.newUser.tel_par = 0;
+    this.newUser.tel_par_work = 0;
+
+    this.newUser.id_dri= 0;
+    this.newUser.first_name_dri= '';
+    this.newUser.last_name_dri= '';
+    this.newUser.bd_dri= '';
+    this.newUser.gender_dri= '';
+    this.newUser.id_card_dri= 0;
+    this.newUser.tel_dri= 0;
+
   }
   
   

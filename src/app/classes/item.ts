@@ -11,6 +11,7 @@ export class User{
     public email: string;
     public password: string;
     public status: string;
+    
     public id_stu: number;
     public first_name_stu: string;
     public last_name_stu: string;
@@ -22,6 +23,21 @@ export class User{
     public sick_stu: string;
     public school: string;
     public tel_stu: number;
+
+    public id_par: number;
+    public first_name_par: string;
+	public last_name_par: string; 
+	public gender_par: string;
+	public tel_par: number;
+    public tel_par_work: number;
+    
+    public id_dri: number;
+    public first_name_dri: string;
+    public last_name_dri: string;
+    public bd_dri: string;
+    public gender_dri: string;
+    public id_card_dri: number;
+    public tel_dri: number;
 }
 
 export class Parent{
