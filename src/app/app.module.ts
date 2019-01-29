@@ -13,6 +13,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { RouteGuard } from './classes/route-guard';
 import { MenuStudentComponent } from './components/menu-student/menu-student.component';
 import { SearchcarStudentComponent } from './components/searchcar-student/searchcar-student.component';
+import { TestComponent } from './test/test.component';
+import { MapPointComponent } from './map-point/map-point.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SearchcarStudentComponent } from './components/searchcar-student/search
     LoginComponent,
     RegisterComponent,
     MenuStudentComponent,
-    SearchcarStudentComponent
+    SearchcarStudentComponent,
+    TestComponent,
+    MapPointComponent
   ],
   imports: [
     BrowserModule,

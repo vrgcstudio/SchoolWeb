@@ -1,11 +1,22 @@
 .card {
     margin-top: 20px;
 }
-
+.right {
+    position: absolute;
+    right: 0px;
+    padding: 10px;
+  }
 .maitid-maishidkrai {
     margin-top: 10px;
 }
-
+.img-responsive.img-center {
+    margin: 0 auto;
+    }
+.loginbor {
+    border: 3px solid white;
+    border-radius: 30px;
+}
 body {
-    background-image: linear-gradient(#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#ffffff,#c3f2ff,  #96e8ff);
+    color: rgb(20, 61, 71);
+    background-color: #6dd0f7;
 }

@@ -1,24 +1,22 @@
 <body>
   <div class="row">
       <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-        <img src="/assets/etc/logo.png" class="img-fluid" alt="Responsive image">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">เข้าสู่ระบบ</h5>
-            <form (submit)="submit();">
+          <img src="/assets/png-flies/schoolweb/schoolweb-logo.png" style="margin-top: 100px" class="img-fluid mx-auto d-block mb-5" alt="Responsive image">
+          <img src="/assets/png-flies/schoolweb/schoolweb-pic.png" style="margin-top: 100px" class="img-fluid mx-auto d-block mb-5 right" alt="Responsive image">
+        <form (submit)="submit();">
               <div class="alert alert-danger" *ngIf="error">
                 <i class="fas fa-times-circle"></i> ไม่สามารถเข้าสู่ระบบได้
               </div>
               <div class="form-input">
-                <label><i class="fas fa-user"></i> ชื่อผู้ใช้งาน</label>
+                <label><i class="fas fa-user"></i>   ชื่อผู้ใช้งาน</label>
                 <input type="text" name="username" class="form-control" [(ngModel)]="username">
               </div>
               <div class="form-input">
-                <label><i class="fas fa-lock"></i> รหัสผ่าน</label>
+                <label><i class="fas fa-lock"></i>   รหัสผ่าน</label>
                 <input type="password" name="password" class="form-control" [(ngModel)]="password">
               </div>
               <div class="text-center maitid-maishidkrai">
-                <button type="submit" (submit)="submit();" class="btn btn-success">
+                <button type="submit" (submit)="submit();" class="btn btn-success loginbor">
                   <i class="fas fa-check"></i>
                   เข้าสู่ระบบ
                 </button>
@@ -27,12 +25,11 @@
                 </div>
               </div>
             </form>
-          </div>
-        </div>
       </div>
+      <div>
+        <img src="/assets/png-flies/schoolweb/schoolweb-fam.png" style="margin-top: 1px" class="img-fluid mx-auto" alt="Responsive image">
+      </div>   
     </div>
-    <br>      
-    <br>  
     <br>  
     <br>  
     <br>  
