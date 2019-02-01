@@ -13,10 +13,13 @@
     margin: 0 auto;
     }
 .loginbor {
-    border: 3px solid white;
+    border: 2px solid white;
     border-radius: 30px;
 }
+.kwar {
+    float: right;
+  }
 body {
     color: rgb(20, 61, 71);
-    background-color: #6dd0f7;
+    background-image: url(/assets/png-flies/schoolweb/schoolweb-bg2.png);
 }

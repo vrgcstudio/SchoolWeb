@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapPointComponent } from './map-point.component';
+import { Tab401Component } from './tab401.component';
 
-describe('MapPointComponent', () => {
-  let component: MapPointComponent;
-  let fixture: ComponentFixture<MapPointComponent>;
+describe('Tab401Component', () => {
+  let component: Tab401Component;
+  let fixture: ComponentFixture<Tab401Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapPointComponent ]
+      declarations: [ Tab401Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapPointComponent);
+    fixture = TestBed.createComponent(Tab401Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

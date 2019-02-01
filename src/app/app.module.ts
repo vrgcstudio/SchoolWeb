@@ -14,7 +14,8 @@ import { RouteGuard } from './classes/route-guard';
 import { MenuStudentComponent } from './components/menu-student/menu-student.component';
 import { SearchcarStudentComponent } from './components/searchcar-student/searchcar-student.component';
 import { TestComponent } from './test/test.component';
-import { MapPointComponent } from './map-point/map-point.component';
+import { Teacher1Component } from './components/teacher1/teacher1.component';
+import { Tab401Component } from './components/tab401/tab401.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MapPointComponent } from './map-point/map-point.component';
     MenuStudentComponent,
     SearchcarStudentComponent,
     TestComponent,
-    MapPointComponent
+    Teacher1Component,
+    Tab401Component,
   ],
   imports: [
     BrowserModule,
