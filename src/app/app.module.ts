@@ -16,6 +16,7 @@ import { SearchcarStudentComponent } from './components/searchcar-student/search
 import { TestComponent } from './test/test.component';
 import { Teacher1Component } from './components/teacher1/teacher1.component';
 import { Tab401Component } from './components/tab401/tab401.component';
+import { Test1Component } from './components/test1/test1.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { Tab401Component } from './components/tab401/tab401.component';
     TestComponent,
     Teacher1Component,
     Tab401Component,
+    Test1Component,
   ],
   imports: [
     BrowserModule,

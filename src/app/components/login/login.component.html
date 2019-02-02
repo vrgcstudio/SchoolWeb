@@ -18,9 +18,11 @@
                 <input type="password" name="password" class="form-control" [(ngModel)]="password">
               </div>
               <div class="text-center maitid-maishidkrai">
-                <button type="submit" (submit)="submit();" class="btn btn-success loginbor">
-                  <i class="fas fa-check"></i>
-                  เข้าสู่ระบบ
+                <button type="submit" (submit)="submit();" class="btn btn-success loginbor" style="vertical-align:middle">
+                  <span>
+                    <i class="fas fa-check"></i>
+                    เข้าสู่ระบบ 
+                  </span>
                 </button>
                 <div>
                   <a routerLink="/register"><i class="fas fa-user-plus"></i> สมัครสมาชิก</a>

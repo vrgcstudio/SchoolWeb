@@ -9,6 +9,7 @@ import { MenuStudentComponent } from './components/menu-student/menu-student.com
 import { SearchcarStudentComponent } from './components/searchcar-student/searchcar-student.component';
 import { Teacher1Component } from './components/teacher1/teacher1.component';
 import { Tab401Component } from './components/tab401/tab401.component';
+import { Test1Component } from './components/test1/test1.component';
 
 const routes: Routes = [
   { path: 'auth', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'searchcar', component: SearchcarStudentComponent},
   { path: 'teacher1', component: Teacher1Component},
   { path: 'tab401', component: Tab401Component},
+  { path: 'test1', component: Test1Component},
 
 ];
 
